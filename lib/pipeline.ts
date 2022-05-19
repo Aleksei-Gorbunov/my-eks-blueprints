@@ -7,8 +7,10 @@ export default class PipelineConstruct extends Construct {
   constructor(scope: Construct, id: string, props?: cdk.StackProps){
     super(scope,id)
 
+
     const account = props?.env?.account!;
     const region = props?.env?.region!;
+
 
     const blueprint = blueprints.EksBlueprint.builder()
     .account(account)
